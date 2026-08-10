@@ -29,10 +29,14 @@ function AuthShell({
         <div className="auth-card grid w-full overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm md:grid-cols-[0.95fr_1.05fr]">
           <aside className="auth-side flex min-h-140 flex-col justify-between bg-[#0f766e] p-8 text-white md:p-10">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-100">
-                Finance Project
-              </p>
-              <h1 className="mt-5 max-w-md text-4xl font-semibold leading-tight md:text-5xl">
+              <button
+                type="button"
+                onClick={() => switchView('landing')}
+                className="mb-4 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-teal-200 hover:text-white transition-colors"
+              >
+                <span>← Back to Landing Page</span>
+              </button>
+              <h1 className="mt-2 max-w-md text-4xl font-semibold leading-tight md:text-5xl">
                 {isLogin ? 'Log in and continue your money plan.' : 'Build your account and start tracking clearly.'}
               </h1>
             </div>

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import AuthShell from './components/auth/AuthShell'
 import FinanceDashboard from './components/dashboard/FinanceDashboard'
+import LandingPage from './components/landing/LandingPage'
 import { apiFetch, readResponse } from './utils/api'
 import {
   initialRegisterData,
@@ -11,7 +12,7 @@ import {
 } from './utils/initialStates'
 
 function App() {
-  const [activeView, setActiveView] = useState('login')
+  const [activeView, setActiveView] = useState('landing')
   const [registerData, setRegisterData] = useState(initialRegisterData)
   const [loginData, setLoginData] = useState(initialLoginData)
   const [financeData, setFinanceData] = useState(initialFinanceData)
@@ -399,10 +400,22 @@ function App() {
       setFinanceView('input')
       setFinanceData(initialFinanceData)
       setProfileFinanceData(initialProfileFinanceData)
-      setActiveView('login')
+      setActiveView('landing')
       setMessage('You have been logged out.')
       setIsLoading(false)
     }
+  }
+
+  if (activeView === 'landing') {
+    return (
+      <LandingPage
+        onSwitchView={switchView}
+        isAuthenticated={isAuthenticated}
+        user={user}
+        isDarkMode={isDarkMode}
+        handleToggleTheme={handleToggleTheme}
+      />
+    )
   }
 
   if (isAuthenticated) {
