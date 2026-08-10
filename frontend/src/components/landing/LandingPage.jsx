@@ -191,12 +191,12 @@ export default function LandingPage({
 
           {/* Logo */}
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 via-teal-500 to-cyan-500  shadow-md shadow-emerald-500/20 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-xl bg-linear-to-tr from-emerald-500 via-teal-500 to-cyan-500  shadow-md shadow-emerald-500/20 flex items-center justify-center">
               <div className="w-full h-full bg-white dark:bg-slate-900 rounded-[10px] flex items-center justify-center">
                 <TrendingUp className="w-5 h-5 text-emerald-500" />
               </div>
             </div>
-            <span className="text-xl font-extrabold tracking-tight  bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">
+            <span className="text-xl font-extrabold tracking-tight  bg-linear-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">
               FIMA
             </span>
           </div>
@@ -230,7 +230,7 @@ export default function LandingPage({
             {isAuthenticated ? (
               <button
                 onClick={() => onSwitchView('dashboard')}
-                className="px-5 py-2.5 text-sm font-semibold rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white shadow-md shadow-emerald-500/25 transition-all hover:scale-[1.02] flex items-center gap-2"
+                className="px-5 py-2.5 text-sm font-semibold rounded-full bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white shadow-md shadow-emerald-500/25 transition-all hover:scale-[1.02] flex items-center gap-2"
               >
                 <span>Dashboard ({user?.name?.split(' ')[0] || 'User'})</span>
                 <ArrowRight className="w-4 h-4" />
@@ -245,7 +245,7 @@ export default function LandingPage({
                 </button>
                 <button
                   onClick={() => onSwitchView('register')}
-                  className="px-5 py-2.5 text-sm font-semibold rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white shadow-md shadow-emerald-500/25 transition-all hover:scale-[1.02]"
+                  className="px-5 py-2.5 text-sm font-semibold rounded-full bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white shadow-md shadow-emerald-500/25 transition-all hover:scale-[1.02]"
                 >
                   Sign Up
                 </button>
@@ -356,7 +356,7 @@ export default function LandingPage({
           <div className="md:col-span-6 relative flex justify-center items-center">
 
             {/* Background Glow Ring */}
-            <div className="absolute w-[85%] h-[85%] rounded-full bg-gradient-to-tr from-emerald-300/30 to-teal-200/40 blur-2xl"></div>
+            <div className="absolute w-[85%] h-[85%] rounded-full bg-linear-to-tr from-emerald-300/30 to-teal-200/40 blur-2xl"></div>
 
             {/* Main 3D Generated Render Image */}
             <div className="relative z-10 w-full max-w-lg transition-transform duration-500 hover:scale-[1.02]">
@@ -560,7 +560,7 @@ export default function LandingPage({
       {/* DYNAMIC FEATURE: INTERACTIVE GOAL CALCULATOR & SIMULATOR SECTION */}
       <section id="calculator" className="py-20 relative z-10">
         <div className="max-w-5xl mx-auto px-5">
-          <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-slate-700 relative overflow-hidden">
+          <div className="bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-slate-700 relative overflow-hidden">
 
             {/* Decorative background glow */}
             <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
@@ -790,7 +790,7 @@ export default function LandingPage({
       {/* SECTION 6: CTA BANNER SECTION ("Ready to get started?") matching image */}
       <section className="py-12 relative z-10">
         <div className="max-w-5xl mx-auto px-5">
-          <div className="bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 rounded-3xl p-8 sm:p-10 text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="bg-linear-to-r from-emerald-500 via-teal-500 to-emerald-600 rounded-3xl p-8 sm:p-10 text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
               <h3 className="text-2xl sm:text-3xl font-black">Ready to get started?</h3>
               <p className="text-xs sm:text-sm text-emerald-100 mt-1">
