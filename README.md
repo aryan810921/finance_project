@@ -87,6 +87,53 @@ npm run dev
 
 ---
 
+## 🐳 Run with Docker (Production-Ready Architecture)
+
+The project includes production-grade Dockerfiles and a `docker-compose.yml` configured to connect to your **MongoDB Atlas Cloud Database**.
+
+### 1. Environment Setup
+Configure your environment variables in `.env` (a template is available in `.env.example`):
+
+```bash
+cp .env.example .env
+```
+
+Ensure your `MONGO_URI` in `.env` points to your MongoDB Atlas cluster:
+```env
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.s3cqlhk.mongodb.net/finance-project?retryWrites=true&w=majority
+```
+
+### 2. Start the Application
+Run the entire stack (Backend + Frontend Reverse Proxy) with Docker Compose:
+
+```bash
+# Build and run containers in background
+docker-compose up --build -d
+
+# View live container logs
+docker-compose logs -f
+
+# Check container status
+docker-compose ps
+
+# Stop containers
+docker-compose down
+```
+
+- **Frontend Application**: [http://localhost:3000](http://localhost:3000)
+- **Backend API**: [http://localhost:5000](http://localhost:5000)
+- **Database**: Cloud-hosted on **MongoDB Atlas**
+
+---
+
+### 3. Architecture Highlights (DevOps Resume Points)
+- **Multi-Stage Build**: React frontend uses Node.js for bundling and an ultra-lightweight Nginx Alpine image for serving static assets (~25MB).
+- **Reverse Proxy**: Nginx routes `/api` calls directly to the internal backend container, eliminating CORS overhead.
+- **Security & Least Privilege**: Backend container runs as non-root user `node`.
+- **Secret Management**: Database credentials and secrets are managed via `.env` and kept out of version control.
+
+---
+
 ## 🔌 Core APIs
 
 |  Method | Endpoint                 | Purpose             |

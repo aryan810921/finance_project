@@ -1,0 +1,21 @@
+# Dependency directories
+node_modules/
+
+# Environment files and credentials (DO NOT COMMIT SECRETS)
+.env
+*.env.local
+
+# Build outputs
+dist/
+dist-ssr/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS and Editor files
+.DS_Store
+.vscode/
+.idea/
+
